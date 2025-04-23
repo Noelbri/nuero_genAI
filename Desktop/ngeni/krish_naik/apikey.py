@@ -19,7 +19,7 @@ class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 # Initialize the LLM
-model = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key)
+model = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key, streaming=True)
 
 # Define a node to handle LLM queries 
 async def call_llm(state: State):
